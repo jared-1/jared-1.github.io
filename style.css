@@ -1,0 +1,452 @@
+*{/*grabs everything in the page*/
+    padding:0px;
+    margin:0px;
+    box-sizing:border-box;/*padding and the border will be substractive rather than additive*/
+}
+
+/******************
+HEADER
+*******************/
+header{
+    background-color: rgba(0,0,20,.7);
+    position:fixed;
+    z-index: 10;
+    top:0;
+    left:0;
+    width:100%;
+    color:#fff;
+    padding:35px 100px 20px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;   
+}
+
+header a{
+    text-decoration: none;
+    color:white;
+    opacity: 0.6;
+    cursor:pointer;
+}
+
+header a:hover{
+    opacity:1;
+}
+
+header nav ul{
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+header nav ul li{
+    margin:0 6px;
+}
+
+header nav ul li:first-child{/*first item in the list*/
+    margin-left: 0;/*just removes the margin from the first item*/
+}
+
+header nav ul li:last-child{/*last item in the list*/
+    margin-right:0;/*just removes the margin from the last item*/
+}
+
+@media (max-width:1000px){
+    header{
+        text-align: center;
+        flex-direction: column;
+        padding:20px 50px;
+    }
+    header img{
+        width:75%;
+    }
+    header nav{
+        justify-content: space-around;
+    }
+    header h2{
+        margin-bottom: 15px;
+    }
+}
+/********************
+HEADER DONE
+**********************/
+
+html{
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    color: #555;
+}
+
+a{
+    color: white;/*colour of the items in a tags which are the ICONS*/
+}
+
+ul{
+    list-style: none; /*removes the dots from the unordered list*/
+}
+
+/*---------------
+HERO
+----------------*/
+h1, h2, h3, h4, h5, h6{
+ font-family: 'Oswald', sans-serif;
+}
+#hero{
+    background:gray;
+    color:white;
+    text-align: center;
+    /*allows us to have horizontal and vertical centering in our parent container*/
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background-image: url('img/hero.jpg');
+    background-repeat: none;/*background would not repeat over */
+    background-size: cover;
+    min-height: 100vh;/*100 video height will take up the entire screen*/
+    
+    
+}
+
+#hero h1, #hero h3{
+    font-size: 28px;
+    text-shadow: 2px 2px black;
+    margin-bottom: 40px;
+}
+
+#hero h1{
+    font-size: 60px;
+    margin:15px;
+}
+
+#hero a.btn{
+    color:white;
+    background-color:black;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px 46px;
+    border-radius: 8px;
+    opacity:1;
+    border: 2px solid white;
+}
+
+#hero a.btn:hover{/*changes the color to blue when the mouse is hovering the text*/
+    background-color:blue;
+}
+
+@media (max-width: 800px){
+    /*only works when the screen is 800pixels or below*/
+    #hero{
+        min-height: 600px;
+        /* when you want to center your image
+        background-size: 100%;
+        background-repeat: no-repeat;
+        */
+    }
+    
+    #hero h1{
+        font-size: 36px;
+    }
+    
+    #hero h3{
+        font-size: 18px;
+    }
+}
+/*--------------
+HERO DONE
+-----------------*/
+
+/*-----------------
+ABOUT ME
+------------------*/
+ h3.title{
+    color:#131633;/*black text*/
+    text-transform: capitalize;/*first letter of every word is uppercase*/
+     text-align: center;
+     font-size: 32px;
+     margin-bottom: 35px;
+}
+hr{
+    width:150px;
+    height:2px;
+    background-color: #2196f3;
+    border:0;
+    margin: 40px auto;
+    
+}
+
+#about{
+    padding:10px;
+    background-color: #f7f7f7;/*white gray*/
+    margin-bottom: 20px;
+    
+}
+
+ #two-cols{
+     display:flex;
+     flex-direction:row;
+     align-items: center;
+     justify-content: center;
+}
+
+.about-img{
+    border:4px solid black;
+    background-color: black;
+}
+
+.about-bio{
+    width:65%;
+    max-width: 800px;
+    line-height: 2;
+    margin-left: 20px;
+}
+
+@media (max-width:600px){
+    /*changes in the about and two-column when the display screen is 600 or below*/
+    #about, #two-cols{
+        flex-direction:column;/*stacks instead of side by side when the screen gets small*/
+    }
+    .about-bio{
+        margin-top: 20px;
+        line-height: 1.5;
+        text-align: left;
+    }
+    
+}
+/*-----------------
+ABOUT ME DONE
+------------------*/
+/*-----------------
+GALLERY
+------------------*/
+#gallery{
+    background-color: white;
+}
+
+#gallery .grid li{
+    padding:20px;
+    height:350px;
+    border-radius: 3px;
+    background-clip: content-box;/*cliiping the pictures inside of the content box*/
+    background-size: cover;
+    background-position:center;
+    background-color: gray;/*if the image is failed to load, then gray boxes will show up*/
+}
+
+#gallery ul.grid{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#gallery .grid li.small{
+    /*flex basis is for the children of a flex item*/  
+    flex-basis: 40%;
+}
+
+#gallery .grid li.large{
+    /*flex basis is for the children of a flex item*/  
+    flex-basis: 60%;
+}
+
+#gallery p{
+    max-width:800px;
+    text-align: center;
+    margin:0 auto 35px;
+    padding: 0 20px;
+    line-height: 2;
+}
+
+@media(max-width:1000px){
+    #gallery .grid li.small,
+    #gallery .grid li.large{
+        flex-basis:100%;
+    }
+    
+}
+/*-----------------
+GALLERY DONE
+------------------*/
+/*-----------------
+TRAVELLING
+------------------*/
+#getting-around{
+    text-align:center;
+    max-width: 800px;
+    margin: 0 auto;/*texts and icons are in the middle of the page because of the auto margin from left and right*/
+}
+
+#getting-around ul.grid{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+#getting-around p{
+    margin-bottom: 20px;
+}
+
+#getting-around ul li{
+    flex-basis: 30%;/*makes the travelling info into columns*/
+    padding: 0 20px;
+    margin-bottom: 40px;
+}
+
+.ico{
+    font-size: 40px;
+    color: skyblue;
+    margin-bottom: 20px;
+}
+
+#getting-around ul li h4{
+    color:black;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#getting-around ul li p{
+    text-align: left;
+    margin:0;
+}
+
+@media(max-width:1000px){
+    #getting-around{
+        padding:0 40px;
+    }
+    #getting-around ul li {
+        flex-basis: 70%;
+        margin-bottom: 65px;
+    }
+    #getting-around ul li p{
+        text-align: center;
+    }
+}
+
+
+
+/*-----------------
+TRAVELLING DONE
+------------------*/
+/*-----------------
+FAMOUS QUOTES
+------------------*/
+#famous-quotes{
+    background-color: #fafafa;
+    text-align: center;
+    padding-bottom: 40px;
+    
+}
+
+#famous-quotes .portrait-photos{
+    border-radius: 50%;/*changes the square image to circle*/
+    border:4px solid skyblue;
+    margin-bottom: 10px;
+    
+}
+
+#famous-quotes .portrait-photos:first-child{/*first item*/
+    margin-bottom: 20px;
+}
+
+#famous-quotes .quote{
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+#famous-quotes .author{
+    margin: 20px auto;
+}
+#famous-quotes .author:last-child{/*last item*/
+    margin-bottom: 0;
+}
+
+@media (max-width:1000px){
+    #famous-quotes .quote{
+        font-size: 18px;
+        padding: 0 20px;
+    }
+    
+    #famous-quotes .author{
+    font-size: 14px;
+    }
+}
+
+/*-----------------
+FAMOUS QUOTES DONE
+------------------*/
+
+/*-----------------
+CONTACT
+------------------*/
+section.flexbox-section{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+section.flexbox-section p{
+    max-width: 900px;
+    text-align:center;
+    margin-bottom: 35px;
+    padding:0 20px;
+    line-height: 1.5;
+}
+
+
+
+/*-----------------
+CONTACT DONE
+------------------*/
+
+/*-------------
+FOOTER
+-------------*/
+footer{
+    background-color: #131622;/*colour of the background which is dark blueish*/
+    color:white; /*colour of the text*/
+    text-align: center; /*text is in the middle of the page*/
+    background: linear-gradient(to bottom, #284e7a,#000 100%); /*colour goes from blue to black from the top to bottom*/
+    padding: 60px 0px;
+    display:flex;/*everything went into row*/
+    flex-direction: column;/*everything in the footer is stack in column*/
+    align-items:center;/*will center everything vertically*/
+}
+
+footer p{
+    text-transform: uppercase;/*sets the text to uppercase*/
+    font-size: 14px;
+    color: rgba(255,255,255,.6);/*makes the text transparent*/
+    margin:10px;
+}
+
+footer ul{
+    margin-bottom:25px;
+    /*change the icons to row instead of columns*/
+    display:flex;
+    flex-direction:row;
+}
+
+footer ul li{
+    margin:0px 8px;/*set the margin to 0 top and bot and 8 right and left*/
+}
+
+footer ul li a{
+    font-size: 36px;/*size of the icons*/
+    cursor: pointer;
+}
+
+@media (max-width: 800px){
+    /*only works when the screen is 800pixels or below*/
+    footer{
+        padding:80px 15px;
+    }
+}
